@@ -1244,15 +1244,18 @@
 #define PS_ON_PIN          45
 #define KILL_PIN           46
 
+
+// LEN: HEATER Pin 2 and TEMP pins 15,14 are blown after a hotend-short incident
+
 #if (TEMP_SENSOR_0==0)
  #define TEMP_0_PIN         -1
  #define HEATER_0_PIN       -1
 #else
- #define HEATER_0_PIN        2    // EXTRUDER 1
+ #define HEATER_0_PIN        3    // EXTRUDER 1
  #if (TEMP_SENSOR_0==-1)
   #define TEMP_0_PIN         6    // ANALOG NUMBERING - connector *K1* on RUMBA thermocouple ADD ON is used
  #else
-  #define TEMP_0_PIN         15   // ANALOG NUMBERING - default connector for thermistor *T0* on rumba board is used
+  #define TEMP_0_PIN         13   // ANALOG NUMBERING - default connector for thermistor *T0* on rumba board is used
  #endif
 #endif 
 
@@ -1260,11 +1263,11 @@
  #define TEMP_1_PIN         -1
  #define HEATER_1_PIN       -1
 #else
- #define HEATER_1_PIN        3    // EXTRUDER 2
+ #define HEATER_1_PIN        2    // EXTRUDER 2
  #if (TEMP_SENSOR_1==-1)
   #define TEMP_1_PIN         5    // ANALOG NUMBERING - connector *K2* on RUMBA thermocouple ADD ON is used
  #else
-  #define TEMP_1_PIN         14   // ANALOG NUMBERING - default connector for thermistor *T1* on rumba board is used
+  #define TEMP_1_PIN         15   // ANALOG NUMBERING - default connector for thermistor *T1* on rumba board is used
  #endif
 #endif
 
@@ -1276,7 +1279,7 @@
  #if (TEMP_SENSOR_2==-1)
   #define TEMP_2_PIN         7    // ANALOG NUMBERING - connector *K3* on RUMBA thermocouple ADD ON is used <-- this can not be used when TEMP_SENSOR_BED is defined as thermocouple
  #else
-  #define TEMP_2_PIN         13   // ANALOG NUMBERING - default connector for thermistor *T2* on rumba board is used
+  #define TEMP_2_PIN         14   // ANALOG NUMBERING - default connector for thermistor *T2* on rumba board is used
  #endif
 #endif
 
