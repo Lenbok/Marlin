@@ -457,10 +457,20 @@ static void lcd_implementation_status_screen()
         lcd.print(' ');
 #  else
     lcd.setCursor(0,1);
-    lcd.print('X');
-    lcd.print(ftostr3(current_position[X_AXIS]));
-    lcd_printPGM(PSTR(" Y"));
-    lcd.print(ftostr3(current_position[Y_AXIS]));
+    if (current_position[X_AXIS] >= 0.0) {
+      lcd_printPGM(PSTR("X+"));
+      lcd.print(ftostr3(current_position[X_AXIS]));
+    } else {
+      lcd_printPGM(PSTR("X-"));
+      lcd.print(ftostr3(current_position[X_AXIS] * -1));
+    }
+    if (current_position[Y_AXIS] >= 0.0) {
+      lcd_printPGM(PSTR(" Y+"));
+      lcd.print(ftostr3(current_position[Y_AXIS]));
+    } else {
+      lcd_printPGM(PSTR(" Y-"));
+      lcd.print(ftostr3(current_position[Y_AXIS] * -1));
+    }
 #  endif//EXTRUDERS > 1 || TEMP_SENSOR_BED != 0
 # endif//LCD_WIDTH > 19
     lcd.setCursor(LCD_WIDTH - 8, 1);
