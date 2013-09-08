@@ -200,9 +200,9 @@
 //    #define  DEFAULT_Kd 12
 
 // Initial settings after autotune (Makergear on 14.5V)
-    #define  DEFAULT_Kp 59.52
-    #define  DEFAULT_Ki 9.36 
-    #define  DEFAULT_Kd 94.6
+    #define  DEFAULT_Kp 19.8
+    #define  DEFAULT_Ki 3.12 
+    #define  DEFAULT_Kd 84.1
 
 // Mendel Parts V9 on 12V
 //    #define  DEFAULT_Kp 63.0
@@ -334,7 +334,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define X_MIN_POS 0
 #define Y_MAX_POS 200
 #define Y_MIN_POS 0
-#define Z_MAX_POS 203.95
+#define Z_MAX_POS 203.05
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -354,15 +354,16 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {50*60, 50*60, 6*60, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 3200, 615}  // LEN GT2 / 20T pulleys, 200 steps/mm motors M6 leadscrews, Arcol Hyena2.0
-#define DEFAULT_MAX_FEEDRATE          {200, 200, 4, 30}    // (mm/sec)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 3200, 592}  // LEN GT2 / 20T pulleys, 200 steps/mm motors M6 leadscrews, M8 hobbed bolt
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 3200, 615}  // LEN GT2 / 20T pulleys, 200 steps/mm motors M6 leadscrews, Arcol Hyena
+#define DEFAULT_MAX_FEEDRATE          {200, 200, 4, 10}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {3000, 3000, 128, 5000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          4000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  5000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
