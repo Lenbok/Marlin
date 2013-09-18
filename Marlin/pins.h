@@ -1246,6 +1246,7 @@
 
 
 // LEN: HEATER Pin 2 and TEMP pins 15,14 are blown after a hotend-short incident
+// LEN: Can get a functioning second extruder using TEMP_1_PIN 12 (T3 on RUMBA), HEATER_2_PIN 6 (HE2 on RUMBA)
 
 #if (TEMP_SENSOR_0==0)
  #define TEMP_0_PIN         -1
