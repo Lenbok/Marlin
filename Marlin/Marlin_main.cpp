@@ -752,7 +752,11 @@ static void axis_is_at_home(int axis) {
   }
 #endif
   current_position[axis] = base_home_pos(axis) + add_homeing[axis];
-  min_pos[axis] =          base_min_pos(axis) + add_homeing[axis];
+  if (axis == Z_AXIS && Z_HOME_DIR == 1) {
+    min_pos[axis] =          base_min_pos(axis);
+  } else {
+    min_pos[axis] =          base_min_pos(axis) + add_homeing[axis];
+  }
   max_pos[axis] =          base_max_pos(axis) + add_homeing[axis];
 }
 
