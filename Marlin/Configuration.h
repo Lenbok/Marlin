@@ -215,7 +215,7 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 //
 //#define BED_LIMIT_SWITCHING
 
@@ -239,6 +239,11 @@
 //    #define  DEFAULT_bedKd 1675.16
 
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
+// LEN
+    #define  DEFAULT_bedKp 131.26
+    #define  DEFAULT_bedKi 25.68
+    #define  DEFAULT_bedKd 167.74
+
 #endif // PIDTEMPBED
 
 
